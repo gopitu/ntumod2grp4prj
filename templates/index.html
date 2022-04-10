@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <h1>NTU Fleximaster - AI and Analytics in Finance, Credit and Related Risks</h1>
+        <h2>Group 4 Project - Credit Card Fraudulent Transaction Predictor</h2>
+        <table style="background-color:F0F8FF; width:100%">
+            <tr><td><b>#</b></td><td><b>Name</b></td></tr>
+            <tr><td>1</td><td>Cheng Mun Ng (K2220353L)</td></tr>
+            <tr><td>2</td><td>Gopinath T Ulaganathan (K2220357K)</td></tr>
+            <tr><td>4</td><td>Hansen Lee Teck Hui (K2220343B)</td></tr>
+            <tr><td>3</td><td>Kellyn Chua (K2220355E)</td></tr>            
+            <tr><td>5</td><td>Mavis Ng Xin Kai (K2220344K)</td></tr>
+        </table>
+        <br/><br/>
+        <form action="/" method="post">
+            <p>Gender:
+                <select name="gender" id="gender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+              </select>
+            </p>
+            <p>Category:
+                <select name="category_code" id="category_code">
+                <option value="0">misc_net</option>
+                <option value="1">grocery_pos</option>
+                <option value="2">entertainment</option>
+                <option value="3">gas_transport</option>
+                <option value="4">misc_pos</option>
+                <option value="5">grocery_net</option>
+                <option value="6">shopping_net</option>
+                <option value="7">shopping_pos</option>
+                <option value="8">food_dining</option>
+                <option value="9">personal_care</option>
+                <option value="10">health_fitness</option>
+                <option value="11">travel</option>
+                <option value="12">kids_pets</option>
+                <option value="13">home</option>
+              </select>
+            </p>
+            <p>Transaction Amount:<input type="number" name="amount" /></p>
+            <p>Age:<input type="number" name="age" step="1" /></p>
+            <p>Purchase Location: 
+                Latitude <input type="number" name="pur_lat" value="50" />
+                Longitude <input type="number" name="pur_long" value="50" />
+            </p>
+            <p>Merchant Location: 
+                Latitude <input type="number" name="merc_lat" value="250" />
+                Longitude <input type="number" name="merc_long" value="250" />
+            </p>
+            <p>
+                <input type="submit" value="Predict" />
+            </p>
+        </form>
+        <br/>
+        <table style="background-color:E0FFFF; width:100%">
+            <tr><td style="width:10%"><b>Model Name</b></td><td style="width:90%"><b>Prediction</b></td></tr>
+            <tr><td style="width:10%">CART             </td><td style="width:90%">{{result_cart}}</td></tr>
+            <tr><td style="width:10%">Randome Forest   </td><td style="width:90%">{{result_rf}}</td></tr>
+            <tr><td style="width:10%">Gradient Boost   </td><td style="width:90%">{{result_gb}}</td></tr>
+            <tr><td style="width:10%">Log Regression   </td><td style="width:90%">{{result_logreg}}</td></tr>            
+        </table>
+    </body>
+</html>
